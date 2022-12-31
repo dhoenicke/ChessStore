@@ -1,0 +1,24 @@
+@model List<Board>
+<h2>All Boards</h2>
+<div class="d-flex flex-wrap">
+    @foreach (Board b in Model)
+    {
+        <div class="border p-2 m-3 shadow rounded">
+            <img class="imageSize" src="@b.Image" alt="b.Title">
+            <div class="d-flex justify-content-between">
+                <h4><a href="/boards/@b.BoardId"></a>@b.Title</h4>
+                @if (b.UserId == Context.Session.GetInt32("UserId"))
+                {
+                    <form asp-action="DestroyBoard" asp-controller="Home" method="post" class="ps-2">
+                        <input type="submit" value="Delete Set" class="btn btn-danger">
+                    </form>
+                }
+            </div>
+            <h5>Seller: @b.Creator.Username</h5>
+            <h5>Price: @b.Price.ToString("C")</h5>
+            <h5>@b.Quantity set in stock</h5>
+            <h5>Rating: @b.Rating</h5>
+            <h6>About: @b.Description</h6>
+        </div>
+    }
+</div>

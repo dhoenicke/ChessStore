@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.col1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageSize {
+  width: 450px;
+}
+
+.oneImg {
+  width: 400px;
+}

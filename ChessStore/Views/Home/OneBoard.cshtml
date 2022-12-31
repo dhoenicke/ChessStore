@@ -1,0 +1,15 @@
+@model Board
+<div class="d-flex">
+    <div class="border rounded p-2">
+        <h3>@Model.Title</h3>
+        <img src="@Model.Image" alt="@Model.Title" class="oneImg">
+        <h5>Seller: @Model.Creator.Username</h5>
+        <h5>Price: @Model.Price.ToString("C")</h5>
+        <h5>@Model.Quantity set in stock</h5>
+        <h5>Rating: @Model.Rating</h5>
+        <h6>About: @Model.Description</h6>
+    </div>
+    <div>
+        <h3>Order Now</h3>
+    </div>
+</div>
